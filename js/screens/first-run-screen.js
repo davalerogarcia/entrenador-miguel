@@ -13,7 +13,10 @@ export function createFirstRunScreen({ onComplete } = {}) {
   const phaseLabel = createElement('label', { text: MESSAGES.firstRun.phaseLabel, attributes: { for: 'initial-phase' } });
   const phase = createElement('select', { attributes: { id: 'initial-phase', disabled: '' } });
   phase.append(createElement('option', { text: 'Fase 1 · Adaptación', attributes: { value: '1', selected: '' } }));
-  const submit = createPrimaryButton({ label: MESSAGES.firstRun.confirm });
+  const submit = createPrimaryButton({
+    label: MESSAGES.firstRun.confirm,
+    onActivate: () => form.requestSubmit()
+  });
   form.append(dateLabel, dateInput, phaseLabel, phase, submit.element);
   root.append(title, notice, form);
   const cleanup = onMany([{ element: form, eventName: 'submit', handler: (event) => { event.preventDefault(); if (dateInput.reportValidity()) onComplete?.({ planStartDate: dateInput.value, activePhaseId: 1 }); } }]);
