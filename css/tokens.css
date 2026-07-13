@@ -1,0 +1,62 @@
+:root {
+  color-scheme: light dark;
+
+  --color-background: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-border: #e0e0e0;
+  --color-text-primary: #111111;
+  --color-text-secondary: #666666;
+
+  --color-session-a: #1d9e75;
+  --color-session-b: #378add;
+  --color-session-c: #3b6d11;
+  --color-session-ankle: #ba7517;
+  --color-session-rest: #534ab7;
+  --color-action-primary: #111111;
+  --color-action-primary-text: #ffffff;
+  --color-timer: #378add;
+
+  --font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-label: 0.6875rem;
+  --font-size-note: 0.8125rem;
+  --font-size-body: 1rem;
+  --font-size-stat: 1.125rem;
+  --font-size-exercise: 1.25rem;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+
+  --radius-control: 0.75rem;
+  --border-width: 1px;
+  --control-min-height: 3.25rem;
+  --touch-target-min: 3rem;
+  --content-min-width: 22.5rem;
+  --content-reference-width: 24.375rem;
+  --content-max-width: 26.875rem;
+  --page-padding-inline: 1rem;
+  --page-padding-block: 0.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #121212;
+    --color-surface: #1e1e1e;
+    --color-border: #333333;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #aaaaaa;
+
+    --color-session-a: #5dcaa5;
+    --color-session-b: #85b7eb;
+    --color-session-c: #97c459;
+    --color-session-ankle: #ef9f27;
+    --color-session-rest: #afa9ec;
+    --color-action-primary: #ffffff;
+    --color-action-primary-text: #111111;
+  }
+}

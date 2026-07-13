@@ -1,0 +1,2 @@
+import{createElement}from'../utils/dom-utils.js';import{createAppHeader}from'../components/app-header.js';import{MESSAGES}from'../data/messages.js';
+export function createMedicalNoticeScreen({onBack}={}){const root=createElement('section',{className:'screen'});const header=createAppHeader({title:'Aviso médico',action:{text:'←',label:'Volver a ajustes',onActivate:onBack}});root.append(header.element,createElement('p',{className:'medical-notice',text:MESSAGES.medicalDisclaimer}));return{element:root,focusTarget:header.titleElement,destroy(){header.destroy();root.remove();}}}
