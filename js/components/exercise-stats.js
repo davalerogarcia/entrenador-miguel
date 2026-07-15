@@ -28,28 +28,25 @@ export function createExerciseStats(data = {}) {
     loadLabel: data.loadLabel ?? 'Carga'
   };
 
-  function render() {
-    const fields = {
-      set: { label: current.setLabel, value: current.set },
-      target: { label: current.targetLabel, value: current.target },
-      load: { label: current.loadLabel, value: current.load }
-    };
-
-    Object.entries(fields).forEach(([key, field]) => {
-      setText(values.get(key).term, field.label);
-      setText(values.get(key).value, field.value);
-    });
-  }
+  const bindings = {
+    set: values.get('set').value,
+    setLabel: values.get('set').term,
+    target: values.get('target').value,
+    targetLabel: values.get('target').term,
+    load: values.get('load').value,
+    loadLabel: values.get('load').term
+  };
 
   function update(next = {}) {
     for (const key of Object.keys(current)) {
-      if (Object.prototype.hasOwnProperty.call(next, key) && next[key] !== null) {
-        current[key] = next[key];
+      if (!Object.prototype.hasOwnProperty.call(next, key) || next[key] === null) {
+        continue;
       }
+      current[key] = next[key];
+      setText(bindings[key], current[key]);
     }
-    render();
   }
 
-  render();
+  Object.entries(current).forEach(([key, value]) => setText(bindings[key], value));
   return { element: root, update, destroy: () => root.remove() };
 }

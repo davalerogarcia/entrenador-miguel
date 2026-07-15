@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'entrenador-miguel-v1.0.2-rc1-series-transition-fix';
+const CACHE_VERSION = 'entrenador-miguel-v1.0.4-rc1-stats-partial-update';
 const APP_CACHE = `${CACHE_VERSION}-app`;
 const PRECACHE_URLS = [
   './',
